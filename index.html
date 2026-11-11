@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07545d">
+  <meta name="description" content="EswareApps: jogos e experiências digitais para descontrair, descobrir e jogar ao teu ritmo. Conhece o Cozy Arrowz.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="EswareApps | Jogos e experiências digitais">
+  <meta property="og:description" content="Pequenas pausas. Grandes descobertas. Conhece o Cozy Arrowz.">
+  <meta property="og:url" content="https://mardsilva.github.io/">
+  <link rel="icon" href="assets/mark-classic.svg" type="image/svg+xml">
+  <title>EswareApps | Jogos e experiências digitais</title>
+  <style>
+    :root {
+      font-family: ui-rounded, "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: #0a555e;
+      background: #faf8f3;
+      font-synthesis: none;
+      -webkit-font-smoothing: antialiased;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; overflow-x: hidden; }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    :focus-visible { outline: 3px solid #efad58; outline-offset: 4px; }
+    .wrap { width: min(1120px, calc(100% - 44px)); margin-inline: auto; }
+    .top {
+      position: relative;
+      isolation: isolate;
+      padding-bottom: 100px;
+      overflow: hidden;
+      background: radial-gradient(ellipse 580px 420px at 94% 24%, #d4f8f1 0%, transparent 76%),
+                  radial-gradient(ellipse 740px 420px at -10% 0%, #c9f2e9 0%, transparent 76%),
+                  linear-gradient(180deg, #effcf8, #faf8f3);
+    }
+    .top::before, .top::after { content: ""; position: absolute; border-radius: 50%; z-index: -1; pointer-events: none; }
+    .top::before { width: 430px; height: 430px; border: 60px solid #b7eee4; opacity: .5; top: -310px; left: -120px; }
+    .top::after { width: 330px; height: 330px; background: #def7f3; opacity: .8; right: -240px; bottom: -200px; }
+    .bar { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding-block: 30px; }
+    .brand { display: inline-flex; align-items: center; text-decoration: none; gap: 10px; font-weight: 900; letter-spacing: -.055em; font-size: clamp(1.45rem, 2.4vw, 1.8rem); }
+    .brand-symbol { display: inline-grid; place-items: center; width: 43px; height: 43px; border-radius: 15px; background: #0a626b; box-shadow: 0 7px 0 #c5ede8; color: white; transform: rotate(-7deg); }
+    .brand-symbol svg { width: 29px; height: 29px; transform: rotate(7deg); }
+    .navigation { display: flex; align-items: center; gap: clamp(15px, 3vw, 32px); }
+    .navigation a { text-decoration: none; font-weight: 750; font-size: .95rem; }
+    .navigation a:hover, .footer a:hover { color: #0c9b96; }
+    .langs { display: inline-flex; border: 1px solid #b7dfd7; border-radius: 999px; padding: 3px; background: #fff9; }
+    .langs button { border: 0; border-radius: 999px; padding: 6px 9px; background: transparent; color: #396e72; cursor: pointer; font-size: .8rem; font-weight: 800; }
+    .langs button[aria-pressed="true"] { background: #0c656d; color: #fff; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); align-items: center; gap: 60px; padding-top: 72px; }
+    .hero > * { min-width: 0; }
+    .pill { display: inline-flex; align-items: center; gap: 8px; background: #d7f8f0; border: 1px solid #bee8df; color: #075b62; font-size: .85rem; font-weight: 850; padding: 10px 17px; border-radius: 999px; }
+    .pill::before { content: "✦"; color: #ecaa4d; }
+    h1 { margin: 22px 0 20px; font-size: clamp(3rem, 6vw, 5rem); line-height: 1.055; letter-spacing: -.065em; }
+    h1 span { color: #1aaca3; }
+    .lead { font-size: clamp(1.1rem, 1.8vw, 1.25rem); color: #477b7b; line-height: 1.7; max-width: 590px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button { display: inline-flex; justify-content: center; align-items: center; gap: 10px; border: 2px solid #0a6067; border-radius: 18px; padding: 13px 20px; font-weight: 850; text-decoration: none; transition: transform .2s, background .2s, color .2s; }
+    .button:hover { transform: translateY(-2px); }
+    .button.primary { background: #0a6067; color: white; box-shadow: 0 8px 0 #c3eae5; }
+    .button.secondary { background: #fff9; }
+    .showcase { justify-self: center; position: relative; width: min(100%, 405px); }
+    .showcase::before { content: ""; position: absolute; inset: 8% -10%; background: #c5f3eb; border-radius: 48% 52% 36% 64%; transform: rotate(-16deg); }
+    .device { position: relative; margin: auto; max-width: 342px; padding: 19px; border: 10px solid #0c626b; border-radius: 42px; background: #f6fffc; box-shadow: 0 32px 60px #0e6e6a30, inset 0 0 0 1px #fff; transform: rotate(4deg); }
+    .device-top { display: flex; justify-content: space-between; color: #6fa49e; font-size: .78rem; font-weight: 800; margin: 2px 8px 22px; }
+    .device-title { text-align: center; font-size: 1.5rem; font-weight: 900; letter-spacing: -.06em; margin: 0 0 8px; }
+    .device-subtitle { text-align: center; color: #5d9c99; font-size: .82rem; margin: 0 0 18px; }
+    .puzzle { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; padding: 18px 12px; border-radius: 23px; background: #dcf7f1; }
+    .tile { display: grid; place-items: center; min-width: 0; height: 39px; background: white; border-radius: 13px; font-size: 1.3rem; color: #0c9895; font-weight: 900; }
+    .tile.blue { color: #3999d1; } .tile.gold { color: #e1a542; } .tile.pink { color: #ee82a2; }
+    .tile.empty { background: #d0f0e9; color: transparent; }
+    .device-foot { margin: 20px 9px 5px; display: flex; gap: 9px; }
+    .device-foot span { flex: 1; height: 14px; border-radius: 999px; background: #cde9e3; }
+    .device-foot span:first-child { background: #0fa8a0; }
+    section { scroll-margin-top: 40px; }
+    .section { padding-block: 82px; }
+    .section-label { display: inline-block; text-transform: uppercase; font-size: .78rem; letter-spacing: .18em; font-weight: 900; color: #1caca2; }
+    h2 { font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.1; letter-spacing: -.055em; margin: 15px 0 28px; }
+    .game-card { display: grid; grid-template-columns: 155px 1fr; gap: 32px; align-items: center; padding: clamp(24px, 5vw, 48px); border: 1px solid #d9efea; border-radius: 36px; background: #fff; box-shadow: 0 18px 60px #0a5b6020; }
+    .game-icon { width: 155px; height: 155px; border-radius: 32px; box-shadow: 0 14px 28px #0d6a6d22; }
+    .game-info h3 { font-size: clamp(1.85rem, 3vw, 2.5rem); letter-spacing: -.055em; margin: 4px 0 8px; }
+    .game-info p { color: #527e80; line-height: 1.65; max-width: 620px; }
+    .tag { display: inline-block; background: #e3f8f2; padding: 7px 12px; font-size: .77rem; border-radius: 999px; font-weight: 800; }
+    .game-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 17px; margin-top: 25px; }
+    .caption { display: block; color: #588586; font-size: .82rem; line-height: 1.5; }
+    .info { background: #e1f7f1; border-top: 1px solid #c7e9e0; border-bottom: 1px solid #c7e9e0; }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .info p { font-size: 1.08rem; color: #497879; line-height: 1.8; }
+    .info-box { background: #fff9; padding: 30px; border-radius: 26px; }
+    .info-box strong { display: block; font-size: 1.35rem; margin-bottom: 12px; }
+    .footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; padding-block: 32px 54px; }
+    .footer p { margin: 6px 0 0; font-size: .88rem; color: #527f80; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-weight: 700; font-size: .86rem; text-decoration: none; }
+    @media(max-width: 780px) {
+      .bar { flex-wrap: wrap; }
+      .navigation { gap: 15px; flex-wrap: wrap; }
+      .hero { grid-template-columns: minmax(0, 1fr); padding-top: 28px; gap: 55px; }
+      .showcase { width: min(100%, 360px); }
+      .top { padding-bottom: 70px; }
+      .game-card { grid-template-columns: 100px 1fr; gap: 18px; }
+      .game-icon { width: 100px; height: 100px; border-radius: 22px; }
+      .info-grid { grid-template-columns: 1fr; gap: 20px; }
+      .section { padding-block: 60px; }
+    }
+    @media(max-width: 480px) {
+      .wrap { width: min(100% - 32px, 1120px); }
+      .bar { padding-block: 22px; }
+      .brand { font-size: 1.45rem; }
+      .navigation { width: 100%; justify-content: space-between; }
+      .navigation a { font-size: .88rem; }
+      .hero { padding-top: 30px; }
+      h1 { font-size: clamp(2.55rem, 11vw, 3rem); overflow-wrap: anywhere; }
+      .lead { overflow-wrap: break-word; }
+      .showcase { width: min(100%, 320px); }
+      .device { max-width: 100%; padding: 12px; border-width: 8px; transform: rotate(2deg); }
+      .puzzle { gap: 5px; padding: 12px 8px; }
+      .tile { height: 36px; font-size: 1.15rem; }
+      .game-card { grid-template-columns: 1fr; }
+      .game-icon { width: 112px; height: 112px; }
+      .game-cta .button { width: 100%; }
+      .footer { align-items: start; }
+    }
+    @media(prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main id="top">
+  <div class="top">
+    <header class="wrap bar">
+      <a class="brand" href="#top" aria-label="EswareApps, início">
+        <span class="brand-symbol" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M30 10H12v20h18M12 20h14" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="m25 5 7 5-7 5" stroke="#a3eadf" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        EswareApps
+      </a>
+      <nav class="navigation" aria-label="Navegação principal">
+        <a href="#games" data-i18n="navGames">Jogos</a>
+        <a href="#about" data-i18n="navAbout">Sobre</a>
+        <a href="#contact" data-i18n="navContact">Contacto</a>
+        <div class="langs" aria-label="Idioma">
+          <button type="button" data-locale="pt-PT" aria-pressed="true">PT</button>
+          <button type="button" data-locale="pt-BR" aria-pressed="false">BR</button>
+          <button type="button" data-locale="en-US" aria-pressed="false">EN</button>
+        </div>
+      </nav>
+    </header>
+
+      <section class="wrap hero" aria-labelledby="headline">
+        <div>
+          <span class="pill" data-i18n="eyebrow">Jogos criados com carinho</span>
+          <h1 id="headline"><span data-i18n="heroFirst">Pequenas pausas.</span><br><span data-i18n="heroSecond">Grandes descobertas.</span></h1>
+          <p class="lead" data-i18n="heroDescription">Criamos jogos e experiências digitais para descontrair, descobrir algo novo e aproveitar cada momento ao teu ritmo.</p>
+          <div class="actions">
+            <a class="button primary" href="#games"><span data-i18n="heroPrimary">Conhecer o Cozy Arrowz</span><span aria-hidden="true">↗</span></a>
+            <a class="button secondary" href="mailto:esdevapps@gmail.com" data-i18n="heroSecondary">Falar connosco</a>
+          </div>
+        </div>
+        <div class="showcase" aria-hidden="true">
+          <div class="device">
+            <div class="device-top"><span>♥ ♥ ♥</span><span>✦ 129</span></div>
+            <div class="device-title">Cozy Arrowz</div>
+            <p class="device-subtitle" data-i18n="appMotto">Descontrai, uma seta de cada vez.</p>
+            <div class="puzzle">
+              <span class="tile empty">•</span><span class="tile gold">↘</span><span class="tile">↓</span><span class="tile pink">↙</span><span class="tile empty">•</span>
+              <span class="tile blue">↗</span><span class="tile">→</span><span class="tile gold">↓</span><span class="tile">←</span><span class="tile gold">↖</span>
+              <span class="tile">↑</span><span class="tile pink">↗</span><span class="tile">✦</span><span class="tile blue">↙</span><span class="tile">↑</span>
+              <span class="tile gold">↙</span><span class="tile">→</span><span class="tile pink">↑</span><span class="tile">←</span><span class="tile blue">↘</span>
+              <span class="tile empty">•</span><span class="tile">↖</span><span class="tile gold">↑</span><span class="tile blue">↗</span><span class="tile empty">•</span>
+            </div>
+            <div class="device-foot"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </section>
+  </div>
+
+      <section class="wrap section" id="games" aria-labelledby="games-title">
+        <span class="section-label" data-i18n="sectionGames">A nossa coleção</span>
+        <h2 id="games-title" data-i18n="gamesTitle">Um jogo de cada vez.</h2>
+        <article class="game-card">
+          <img class="game-icon" src="assets/cozy-arrowz-classic.svg" width="155" height="155" alt="Cozy Arrowz" loading="lazy">
+          <div class="game-info">
+            <span class="tag" data-i18n="gameStatus">ANDROID • TESTE FECHADO</span>
+            <h3>Cozy Arrowz</h3>
+            <p data-i18n="gameDescription">Um puzzle relaxante de setas e formas. Descobre novos desenhos, completa desafios diários e joga ao som de música lo-fi.</p>
+            <div class="game-cta">
+              <a class="button primary" href="https://forms.gle/vbYEpPySL6xV8Mji8" target="_blank" rel="noopener noreferrer"><span data-i18n="joinTests">Pedir acesso aos testes</span><span aria-hidden="true">↗</span></a>
+              <span class="caption" data-i18n="testNote">Por agora, apenas para Android. O acesso requer aprovação como testador.</span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="info section" id="about" aria-labelledby="about-title">
+        <div class="wrap info-grid">
+          <div>
+            <span class="section-label" data-i18n="sectionAbout">Sobre nós</span>
+            <h2 id="about-title" data-i18n="aboutTitle">Feito para aqueles momentos só teus.</h2>
+            <p data-i18n="aboutDescription">A EswareApps desenvolve jogos e aplicações com atenção aos detalhes. Gostamos de experiências simples de aprender, agradáveis de usar e com espaço para surpreender.</p>
+          </div>
+          <div class="info-box">
+            <strong data-i18n="contactTitle">Tens alguma sugestão?</strong>
+            <p data-i18n="contactDescription">Uma boa ideia pode começar com uma mensagem. Queremos saber o que achas dos nossos jogos.</p>
+            <a class="button secondary" href="mailto:esdevapps@gmail.com">esdevapps@gmail.com ↗</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  <footer class="wrap footer" id="contact">
+    <div><strong>© <span id="year">2026</span> EswareApps</strong><p data-i18n="footerLine">Jogos, aplicações e experiências digitais.</p></div>
+    <div class="footer-links">
+      <a href="https://github.com/MardSilva" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a href="mailto:esdevapps@gmail.com" data-i18n="footerContact">Contacto</a>
+      <a href="app-ads.txt" data-i18n="adsStatement">Declaração de anúncios</a>
+    </div>
+  </footer>
+  <script>
+    const copy = {
+      "pt-PT": {
+        navGames: "Jogos", navAbout: "Sobre", navContact: "Contacto",
+        eyebrow: "Jogos criados com carinho", heroFirst: "Pequenas pausas.", heroSecond: "Grandes descobertas.",
+        heroDescription: "Criamos jogos e experiências digitais para descontrair, descobrir algo novo e aproveitar cada momento ao teu ritmo.",
+        heroPrimary: "Conhecer o Cozy Arrowz", heroSecondary: "Falar connosco",
+        appMotto: "Descontrai, uma seta de cada vez.",
+        sectionGames: "A nossa coleção", gamesTitle: "Um jogo de cada vez.", gameStatus: "ANDROID • TESTE FECHADO",
+        gameDescription: "Um puzzle relaxante de setas e formas. Descobre novos desenhos, completa desafios diários e joga ao som de música lo-fi.",
+        joinTests: "Pedir acesso aos testes", testNote: "Por agora, apenas para Android. O acesso requer aprovação como testador.",
+        sectionAbout: "Sobre nós", aboutTitle: "Feito para aqueles momentos só teus.",
+        aboutDescription: "A EswareApps desenvolve jogos e aplicações com atenção aos detalhes. Gostamos de experiências simples de aprender, agradáveis de usar e com espaço para surpreender.",
+        contactTitle: "Tens alguma sugestão?", contactDescription: "Uma boa ideia pode começar com uma mensagem. Queremos saber o que achas dos nossos jogos.",
+        footerLine: "Jogos, aplicações e experiências digitais.", footerContact: "Contacto", adsStatement: "Declaração de anúncios"
+      },
+      "pt-BR": {
+        navGames: "Jogos", navAbout: "Sobre", navContact: "Contato",
+        eyebrow: "Jogos criados com carinho", heroFirst: "Pequenas pausas.", heroSecond: "Grandes descobertas.",
+        heroDescription: "Criamos jogos e experiências digitais para relaxar, descobrir coisas novas e aproveitar cada momento no seu ritmo.",
+        heroPrimary: "Conhecer o Cozy Arrowz", heroSecondary: "Fale com a gente",
+        appMotto: "Relaxe, uma seta de cada vez.",
+        sectionGames: "Nossa coleção", gamesTitle: "Um jogo de cada vez.", gameStatus: "ANDROID • TESTE FECHADO",
+        gameDescription: "Um puzzle relaxante de setas e formas. Descubra novos desenhos, conclua desafios diários e jogue ouvindo música lo-fi.",
+        joinTests: "Pedir acesso ao teste", testNote: "Por enquanto, só para Android. É preciso ser aprovado como testador.",
+        sectionAbout: "Sobre nós", aboutTitle: "Feito para aqueles momentos só seus.",
+        aboutDescription: "A EswareApps desenvolve jogos e aplicativos com atenção aos detalhes. Gostamos de experiências fáceis de aprender, gostosas de usar e que ainda reservam surpresas.",
+        contactTitle: "Tem alguma sugestão?", contactDescription: "Uma boa ideia pode começar com uma mensagem. Queremos saber o que você achou dos nossos jogos.",
+        footerLine: "Jogos, aplicativos e experiências digitais.", footerContact: "Contato", adsStatement: "Declaração de anúncios"
+      },
+      "en-US": {
+        navGames: "Games", navAbout: "About", navContact: "Contact",
+        eyebrow: "Games made with care", heroFirst: "Small breaks.", heroSecond: "Great discoveries.",
+        heroDescription: "We make games and digital experiences to help you unwind, discover something new, and enjoy every moment at your own pace.",
+        heroPrimary: "Meet Cozy Arrowz", heroSecondary: "Get in touch",
+        appMotto: "Unwind, one arrow at a time.",
+        sectionGames: "Our collection", gamesTitle: "One game at a time.", gameStatus: "ANDROID • CLOSED TEST",
+        gameDescription: "A relaxing arrow-and-shape puzzle. Discover new designs, complete daily challenges, and play along to lo-fi music.",
+        joinTests: "Request test access", testNote: "Android only for now. Access requires approval as a tester.",
+        sectionAbout: "About us", aboutTitle: "Made for your little moments.",
+        aboutDescription: "EswareApps creates games and apps with attention to detail. We love experiences that are easy to learn, enjoyable to use, and full of little surprises.",
+        contactTitle: "Have a suggestion?", contactDescription: "A good idea can start with a message. We'd love to hear what you think about our games.",
+        footerLine: "Games, apps, and digital experiences.", footerContact: "Contact", adsStatement: "Advertising declaration"
+      }
+    };
+    const buttons = document.querySelectorAll("[data-locale]");
+    function setLanguage(locale) {
+      const lang = copy[locale] ? locale : "pt-PT";
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const value = copy[lang][el.dataset.i18n];
+        if (value) el.textContent = value;
+      });
+      buttons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.locale === lang)));
+      try { localStorage.setItem("eswareapps-lang", lang); } catch (_) {}
+    }
+    buttons.forEach(button => button.addEventListener("click", () => setLanguage(button.dataset.locale)));
+    let saved = null;
+    try { saved = localStorage.getItem("eswareapps-lang"); } catch (_) {}
+    const initial = saved || (/^pt-BR/i.test(navigator.language) ? "pt-BR" : /^en/i.test(navigator.language) ? "en-US" : "pt-PT");
+    setLanguage(initial);
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
