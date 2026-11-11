@@ -1,1 +1,6 @@
 .preview/
+.firebase/
+/design-previews/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log

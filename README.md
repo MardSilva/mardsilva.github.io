@@ -1,22 +1,35 @@
-# EswareApps
+# ES Appz
 
-Website público da EswareApps, com informações sobre os nossos jogos e o
-ficheiro de vendedores de publicidade autorizados pelo AdMob.
+Site institucional da ES Appz. Apresenta o Cozy Arrowz, o Congrega e os próximos projetos, e disponibiliza a declaração de publicidade usada pelo AdMob.
 
-O site será publicado em https://mardsilva.github.io/ através do GitHub Pages,
-com a branch `main` e a pasta `/ (root)`. A página usa apenas HTML,
-CSS e JavaScript estáticos, sem necessidade de build.
+## Publicação
 
-O ficheiro `app-ads.txt` fica na raiz do domínio, acessível em
-https://mardsilva.github.io/app-ads.txt. Depois de o GitHub Pages estar ativo,
-confirma o resultado e introduz https://mardsilva.github.io/ como website do
-programador na ficha do Cozy Arrowz na Google Play Console.
+O endereço principal é https://eswareapps.web.app/, publicado no Firebase Hosting do projeto `eswareapps`.
 
-O ficheiro disponível publicamente **não garante a verificação** pelo AdMob.
-É necessário que o AdMob aceite o domínio e encontre a ficha da aplicação na
-Google Play. Se o AdMob não aceitar o domínio `github.io`, poderemos
-associar um domínio próprio ao GitHub Pages ou utilizar Firebase Hosting.
+O Firebase serve os ficheiros da pasta `public/`. A raiz do repositório mantém uma cópia do site e do `app-ads.txt` para o GitHub Pages, caso essa publicação também seja utilizada.
 
-O jogo Cozy Arrowz permanece num repositório separado. Esta página pública
-apenas contém informação sobre o jogo e o identificador de editor fornecido
-pelo AdMob, sem segredos ou dados de configuração privados.
+Para publicar uma atualização no Firebase Hosting, com a Firebase CLI autenticada na conta certa, executar:
+
+```powershell
+firebase deploy --only hosting --project eswareapps
+```
+
+Para testar localmente a versão que será publicada:
+
+```powershell
+py -m http.server 8000 --directory public
+```
+
+Depois, abrir http://localhost:8000/ no navegador.
+
+## Declaração de publicidade
+
+O ficheiro `public/app-ads.txt` deve manter o mesmo conteúdo de `app-ads.txt` na raiz. Depois da publicação, pode ser consultado em https://eswareapps.web.app/app-ads.txt. O `public/robots.txt` permite a indexação do site e a consulta desse ficheiro.
+
+## Estrutura
+
+- `index.html` e `assets/`: versão mantida na raiz para o GitHub Pages.
+- `public/`: versão publicada pelo Firebase Hosting, incluindo os recursos estáticos e o `app-ads.txt`.
+- `.firebaserc` e `firebase.json`: associação ao projeto Firebase e configuração do Hosting.
+
+O site usa HTML, CSS e JavaScript estáticos. Não precisa de um processo de build.
