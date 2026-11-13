@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "app": {
+    "id": "com.eswareapps.games.cozyarrowz",
+    "name": "Cozy Arrowz"
+  },
+  "updatedAt": "2026-11-13",
+  "latestRelease": {
+    "version": "0.2.0",
+    "buildNumber": 17,
+    "displayVersion": "0.2.0 (1)",
+    "releaseNotes": {
+      "pt-PT": "• A página inicial de Natal adapta os elementos e os espaçamentos em ecrãs mais baixos, mantendo o cartão e o botão «Jogar» visíveis.",
+      "en-US": "• The Christmas Home layout adapts its elements and spacing on shorter screens, keeping the featured card and Play button visible.",
+      "pt-BR": "• A tela inicial de Natal ajusta os elementos e os espaçamentos em telas mais baixas, mantendo o cartão e o botão “Jogar” visíveis."
+    }
+  },
+  "minimumSupportedBuildNumber": 15,
+  "storeUrl": "https://play.google.com/store/apps/details?id=com.eswareapps.games.cozyarrowz",
+  "updateMessages": {
+    "pt-PT": "Está disponível uma atualização do Cozy Arrowz.",
+    "en-US": "An update for Cozy Arrowz is available.",
+    "pt-BR": "Há uma atualização disponível para o Cozy Arrowz."
+  }
+}

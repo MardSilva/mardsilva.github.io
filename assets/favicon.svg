@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ES">
+  <rect width="64" height="64" rx="16" fill="#11120f"/>
+  <rect x="1" y="1" width="62" height="62" rx="15" fill="none" stroke="#e7d7bc" stroke-opacity=".72"/>
+  <text x="32" y="39" fill="#e7d7bc" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" letter-spacing="-2">ES</text>
+</svg>
