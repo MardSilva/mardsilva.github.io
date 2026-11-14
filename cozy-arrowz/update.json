@@ -6,16 +6,16 @@
   },
   "updatedAt": "2026-11-14",
   "latestRelease": {
-    "version": "0.2.0",
-    "buildNumber": 18,
-    "displayVersion": "0.2.0 (2)",
+    "version": "0.2.1",
+    "buildNumber": 19,
+    "displayVersion": "0.2.1",
     "releaseNotes": {
-      "pt-PT": "• O Cozy Arrowz passa a verificar se existem atualizações ao abrir o jogo, com avisos e acesso à Google Play.\n• Nas Definições, em «Sobre o jogo», já podes procurar atualizações e consultar as novidades da versão.",
-      "en-US": "• Cozy Arrowz now checks for updates when you open the game, with notices and a link to Google Play.\n• You can now check for updates and see what's new in Settings, under About the game.",
-      "pt-BR": "• O Cozy Arrowz agora verifica atualizações ao abrir o jogo, com avisos e acesso ao Google Play.\n• Nas Configurações, em «Sobre o jogo», você já pode procurar atualizações e conferir as novidades da versão."
+      "pt-PT": "• Removido o sublinhado amarelo das mensagens de verificação de atualizações.\n• A forma Clássico no Álbum apresenta agora o mesmo ícone de peça de puzzle da respetiva descrição.\n• O Álbum de descobertas passou de 80 para 160 formas, com novas silhuetas e histórias em três idiomas.\n• Melhorado o preenchimento de alguns puzzles avançados.",
+      "en-US": "• Removed the yellow underlines from update-check messages.\n• The Classic shape in the Album now uses the same puzzle-piece icon as its description.\n• The Discovery Album has grown from 80 to 160 shapes, with new silhouettes and stories in three languages.\n• Improved shape coverage in some advanced puzzles.",
+      "pt-BR": "• Removido o sublinhado amarelo das mensagens de verificação de atualizações.\n• A forma Clássico no Álbum agora usa o mesmo ícone de peça de quebra-cabeça da descrição.\n• O Álbum de descobertas passou de 80 para 160 formas, com novas silhuetas e histórias em três idiomas.\n• Melhorado o preenchimento de alguns quebra-cabeças avançados."
     }
   },
-  "minimumSupportedBuildNumber": 16,
+  "minimumSupportedBuildNumber": 17,
   "storeUrl": "https://play.google.com/store/apps/details?id=com.eswareapps.games.cozyarrowz",
   "updateMessages": {
     "pt-PT": "Está disponível uma atualização do Cozy Arrowz.",
